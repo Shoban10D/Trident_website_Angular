@@ -1,0 +1,50 @@
+<html>
+  <body>
+    <div id="body">     
+     
+      <mat-card><h1>
+        <img id="logo" src="./assets/images/trident.jpg" alt="">
+        <p>R E G I S T E R</p>
+    </h1>
+        <hr/>
+
+        <form [formGroup]="Register" *ngIf="Register">
+          <div>
+            <mat-form-field>
+              <mat-label>First name</mat-label>
+              <input matInput formControlName="FirstName"/>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+              <mat-label>Surname</mat-label>
+              <input matInput formControlName="Surname" />
+            </mat-form-field>
+          </div>
+          <br>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="Email" />
+          </mat-form-field>
+          <br><br>
+          <div>
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input type="password" matInput (ngModelChange)="PasswordChanged($event)" formControlName="Password" [type]="hide1 ? 'password' : 'text'" />
+              <mat-icon  matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+              <mat-label>Confrim password</mat-label>
+              <input type="password" matInput formControlName="ConfirmPassword" [type]="hide2 ? 'password' : 'text'"  />
+              <mat-icon  matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+          </div>
+          <!-- {{Register.value | json}} -->
+          <app-password-validator></app-password-validator>
+          <button class="btn btn-outline-danger">SUBMIT</button>
+        </form>
+
+      </mat-card>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+body{
+    width: 100%;
+    height:100%;
+}
+
+.oneLine{
+    display: inline-flex;
+}
+#logo{
+  width: 50%;
+}
+
+#body{
+    background-image: url("https://wallpaper.dog/large/10809218.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+mat-card{
+    border: 0.5px solid rgb(80, 17, 17);
+    text-align: left;
+    text-align: start;
+    border-radius: 30px;   
+    color: azure;
+    width: 30%;
+    height: 80%;
+    top:5%;
+    left: 58%;
+    background-color: rgba(0, 0, 0, 0.5);  
+    text-align: center;       
+}
+
+.mat-icon {
+    font-size: 20px;
+  }
+
+::ng-deep .mat-form-field .mat-form-field-label {
+    color: rgb(184, 181, 181) !important;
+  }
+  ::ng-deep .mat-form-field .mat-form-field-underline {
+    background-color: #D4AF37 ;
+  }
