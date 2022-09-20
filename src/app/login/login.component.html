@@ -1,2 +1,31 @@
-<p>login works!</p>
-<button class="btn btn-primary" [routerLink]="['/Pages/home']">GO to Home</button>
+<html>
+    <body>
+        <div id="body"><br>
+            <div id="Header" style="text-align:center;">
+                <img id="logo" src="./assets/images/trident.jpg" alt="" class="d-flex justify-content-start">
+                <small style="color:white;">TRIDENT</small>
+                     
+              </div>
+                        <mat-card>
+                            <br>
+                            <h2>L O G I N</h2>
+                            <hr>
+                         <form [formGroup]="Login" *ngIf="Login">
+                            <br>
+                            <mat-form-field style="width: 300px;">
+                                <mat-label>EMAIL</mat-label>
+                                <input matInput formControlName="email">
+                            </mat-form-field><br><br><br>
+                            <mat-form-field style="width: 300px;">
+                                <mat-label>PASSWORD</mat-label>
+                            <input matInput formControlName="Password">
+                            </mat-form-field><br>
+                            <small class="d-flex justify-content-end">Forgot Password?</small>
+                            <br><br>                            
+                            <button [class.d-none]="Login.invalid" class="btn btn-outline-info" (click)="Onsubmit(Login.value)"><mat-icon> vpn_key</mat-icon></button>
+                         </form>
+                        </mat-card>
+                        <!-- {{Login.value | json}} -->
+        </div>
+    </body>
+</html>

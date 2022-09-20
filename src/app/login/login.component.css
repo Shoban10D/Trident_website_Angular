@@ -1,0 +1,40 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+#logo{
+    width: 10%;
+  }
+
+#body{
+    background-image: url("https://wallpaperaccess.com/full/1557673.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#Header{
+    letter-spacing:5em;;
+}
+mat-card {
+    border: 0.5px solid;
+    border-color:powderblue;
+    text-align: left;
+    text-align: start;
+    border-radius: 30px;   
+    color: azure;
+    width: 20%;
+    height: 50%;
+    top:5%;
+    left: 73%;
+    background-color: rgba(0, 0, 0, 0.5);  
+    text-align: center;       
+}
+::ng-deep .mat-form-field  .mat-form-field-label {
+    color: rgb(239, 245, 160) !important;
+  }
+  ::ng-deep .mat-form-field .mat-form-field-underline {
+    background-color: #68d3ce ;
+  }

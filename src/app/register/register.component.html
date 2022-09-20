@@ -1,14 +1,20 @@
 <html>
   <body>
-    <div id="body">     
+    <div id="body">
+      <br>
+      <div id="Header">
+        <small style="color:white;">T&nbsp;&nbsp;R&nbsp;&nbsp; I&nbsp;&nbsp; D&nbsp;&nbsp; E&nbsp;&nbsp; N&nbsp;&nbsp; T</small>     
+      </div>
+      
      
       <mat-card><h1>
-        <img id="logo" src="./assets/images/trident.jpg" alt="">
+        <img id="logo" src="./assets/images/trident.jpg" alt=""><br>
+      
         <p>R E G I S T E R</p>
     </h1>
         <hr/>
 
-        <form [formGroup]="Register" *ngIf="Register">
+        <form [formGroup]="Register">
           <div>
             <mat-form-field>
               <mat-label>First name</mat-label>
@@ -37,12 +43,15 @@
               <mat-label>Confrim password</mat-label>
               <input type="password" matInput formControlName="ConfirmPassword" [type]="hide2 ? 'password' : 'text'"  />
               <mat-icon  matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </mat-form-field>
+            </mat-form-field><br>
+            <small class="d-flex justify-content-end" style="color:red"  *ngIf ='Register.errors?.MisMatch && f.ConfirmPassword.touched'>! UN-MATCHING</small>
           </div>
           <!-- {{Register.value | json}} -->
-          <app-password-validator></app-password-validator>
-          <button class="btn btn-outline-danger">SUBMIT</button>
+          <app-password-validator  [pwd]="pwdChecker" (PasswordResult)="MainPassword($event)"></app-password-validator>
+          <button class="btn btn-outline-danger" (click)="onSubmit(Register.value)" [class.d-none]="!SubmitHide || Register.invalid"><mat-icon> directions_car</mat-icon></button>
         </form>
+        <a href="#">
+        <small class="d-flex justify-content-end">Existing User?</small></a>
 
       </mat-card>
     </div>

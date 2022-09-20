@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [ 
-  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'',redirectTo:'register',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'Pages',loadChildren: () =>import('/home/decoders/Desktop/Angular/AngularEcommerce/src/app/pages/pages.module').then((m) => m.PagesModule),}];

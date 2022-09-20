@@ -12,7 +12,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { PasswordValidatorComponent } from './shared/password-validator/password-validator.component';
-
+import { ToastrModule } from 'ngx-toastr';
+import { AuthServiceService } from './Services/auth-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { PasswordValidatorComponent } from './shared/password-validator/password
   ],
   imports: [
     FormsModule,
+    ToastrModule.forRoot(),
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,
@@ -32,7 +34,7 @@ import { PasswordValidatorComponent } from './shared/password-validator/password
     BrowserAnimationsModule,
     PagesModule
   ],
-  providers: [],
+  providers: [AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
