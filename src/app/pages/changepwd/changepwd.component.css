@@ -1,0 +1,34 @@
+/* mat-card{
+    border: 0.5px solid rgb(80, 17, 17);
+    text-align: left;
+    text-align: start;
+    border-radius: 30px;   
+    color: azure;
+    width: 20%;
+    height: 40%;
+    top:5%;
+    left: 78%;
+    background-color: rgba(0, 0, 0, 0.5);  
+    text-align: center;       
+} */
+mat-card{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: xx-large;
+    height: 50%;
+    left:5%;
+    text-align: center;      
+}
+#resetMatCard{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: x-large;
+    width: 500px;
+    height: 50%;
+    left:5%;
+    text-align: center;  
+}

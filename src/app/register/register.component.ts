@@ -2,7 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import { AbstractControl, FormBuilder,FormGroup, Validators} from '@angular/forms';
 import { UserdetailsService } from '../Services/userdetails.service';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,7 +15,7 @@ export class RegisterComponent implements OnInit {
   hide2 = true;
 
 
-  constructor(private fb:FormBuilder,private service:UserdetailsService,private route:Router,private toast:ToastrService) { 
+  constructor(private fb:FormBuilder,private service:UserdetailsService,private route:Router) { 
   }
 
   ngOnInit(): void {
@@ -50,7 +49,6 @@ export class RegisterComponent implements OnInit {
     }
   }
   onSubmit(UserData:any){
-    this.toast.success('Success')
     this.route.navigate(['/login']);
     this.service.dbUserInfo$.next(UserData);
   }

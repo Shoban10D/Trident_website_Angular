@@ -8,30 +8,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './pages/pages.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { PasswordValidatorComponent } from './shared/password-validator/password-validator.component';
-import { ToastrModule } from 'ngx-toastr';
 import { AuthServiceService } from './Services/auth-service.service';
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './shared/shared.module';
+import { MaterialsModule } from './MATERIALMODULE/materials/materials.module';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordValidatorComponent,
   ],
   imports: [
+    MaterialsModule,
+    SharedModule,
     FormsModule,
-    ToastrModule.forRoot(),
     ReactiveFormsModule,
-    MatCardModule,
-    MatInputModule,
-    MatIconModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     PagesModule
   ],
   providers: [AuthServiceService],

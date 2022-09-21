@@ -15,7 +15,11 @@ export class HomeComponent implements OnInit {
 
   logout(){
     localStorage.removeItem('SessionUser');
+    localStorage.removeItem('UserData');
     this.route.navigate(['/login']);
+  }
+  changePWD(){
+    this.route.navigate(['/Pages/ChangePwd',{access:'true'}]);
   }
 
 }

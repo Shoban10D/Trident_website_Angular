@@ -1,17 +1,22 @@
-<!-- <button class="btn btn-primary" (click)="logout()">LOGOUT</button> -->
-<body>   
-    <div id="body">
-    <mat-toolbar>
-        <p id="EnterpriseName">TRIDENT</p>
-        <span class="example-spacer">
-        <button mat-button>HOME</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-button>PRODUCTS</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-button>ABOUT</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-button>ACCOUNT</button>&nbsp;&nbsp;&nbsp;&nbsp;
-    </span>
-    </mat-toolbar>
-    </div>
-    <div class="container">
-        
-    </div>
-</body>
+
+<mat-sidenav-container>
+            <mat-sidenav #sidenav mode="over"><b>ACCOUNT</b>
+                <hr>
+                    <mat-nav-list>
+                            <button mat-list-item (click)="changePWD()"><mat-icon>build</mat-icon> Change Password</button>
+                            <button mat-list-item (click)="logout()"><mat-icon>exit_to_app </mat-icon> Logout</button>
+                    </mat-nav-list>
+            </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+                    <button mat-button (click)="sidenav.toggle()"><mat-icon>account_circle</mat-icon></button>
+                    <button mat-button>HOME</button>
+                    <button mat-button>ABOUT</button>
+                    <button mat-button>PRODUCTS</button> 
+                    <span class="example-spacer"></span> 
+                    <p id="EnterpriseName">TRIDENT</p>
+        </mat-toolbar>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

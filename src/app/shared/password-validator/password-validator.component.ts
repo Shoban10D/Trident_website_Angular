@@ -19,8 +19,8 @@ export class PasswordValidatorComponent implements OnInit,OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes,'changes are captured!');
-    console.log(changes['pwd'].currentValue);
-    let CheckPass = changes['pwd'].currentValue;
+    console.log(changes.pwd.currentValue);
+    let CheckPass = changes.pwd.currentValue;         //Change 'noPropertyAccessFromIndexSignature' in tsConfig.json file to true and see the changes;
     this.Result = this.CheckValidation(CheckPass);
     console.log(this.Result,'Password validation result');
     this.PasswordResult.emit(this.Result);

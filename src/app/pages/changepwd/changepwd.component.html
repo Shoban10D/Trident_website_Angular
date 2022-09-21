@@ -1,0 +1,57 @@
+<app-header></app-header> 
+<div class="d-flex d-inline-flex">
+ <img  src="./assets/images/PasswordChange.jpg" height="1000px" width="1200px">
+
+ <div *ngIf="SWITCH,then pwdChange,else emailCheck">
+
+ </div>
+
+ <ng-template #emailCheck>
+  <mat-card style="width:500px;height:700px;">
+    <br><br>
+    <small style="color:rgb(0, 0, 0);">PASSWORD CHANGE</small><br><br><br>
+    <form [formGroup]="EmailConfirm">
+        <mat-form-field style="width: 300px;">
+            <mat-label>UserName</mat-label>
+            <input [readonly]="read" matInput formControlName="Username"/>
+          </mat-form-field><br>
+          <mat-form-field style="width: 300px;">
+            <mat-label>Email</mat-label>
+            <input [readonly]="read" matInput formControlName="Email" >
+          </mat-form-field><br>
+
+          <button [disabled]="EmailConfirm.invalid" class="btn btn-outline-success" (click)="startTimer()">SEND OTP</button>
+          <!-- {{EmailConfirm.value | json}} -->
+    </form> 
+    <p [hidden]="!Hide" style="text-align:right;">{{ Minute }}:{{ Seconds }}</p><br><br>
+
+    <mat-form-field [class.d-none]="!Hide" appearance="outline" class="d-flex justify-content-start">
+      <mat-label>OTP</mat-label>
+      <input matInput #OTP>
+      <button mat-raised-button (click)="switch(OTP.value)">Verify</button>  
+    </mat-form-field>   
+</mat-card>
+
+ </ng-template>
+
+
+
+<ng-template #pwdChange>
+  <mat-card id="resetMatCard"><br>
+    <small style="color:rgb(0, 0, 0);">PASSWORD CHANGE</small><br><br><br>
+    <mat-form-field style="width: 300px;">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput #passwd (keyup)="PasswordChanged(passwd.value)" [type]="pwdhide1 ? 'password' : 'text'">
+      <mat-icon style="font-size:20px;"  matSuffix (click)="pwdhide1 = !pwdhide1">{{pwdhide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field><br>
+  
+    <mat-form-field style="width: 300px;">
+    <mat-label>Confirm Password</mat-label>
+    <input type="password" matInput #Cpwd (keyup)="ConfirmPwd(Cpwd.value)" [type]="pwdhide2 ? 'password' : 'text'">
+    <mat-icon style="font-size:20px;"  matSuffix (click)="pwdhide2 = !pwdhide2">{{pwdhide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>  
+  <app-password-validator [pwd]="pwdChecker" (PasswordResult)="MainPassword($event)"></app-password-validator> 
+  <button class="btn btn-outline-success"  (click)="onSubmit()">SUBMIT</button> 
+  </mat-card>  
+</ng-template>
+</div>

@@ -1,0 +1,17 @@
+mat-toolbar{
+    height: 100px;
+    background-color: black;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  } 
+  #EnterpriseName{
+    letter-spacing: 0.5em;
+    color: antiquewhite;
+    font-size:xx-large;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: grab;
+}
+#logo{
+    width: 150px;
+}
