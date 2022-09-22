@@ -1,10 +1,54 @@
 {
-  "posts": [
+  "neckbands": [
     {
       "id": 1,
-      "title": "json-server",
-      "description": "typicode"
+      "title": "TRIDENT - Skull",
+      "price":2300,
+      "subtitle":"Neck Band",
+      "img":"./assets/Products/Neckband.jpg"
+    },
+    {
+      "id":2,
+      "title": "Earpod - GenZ",
+      "price":4000,
+      "subtitle":"Earpod",
+      "img":"./assets/Products/earpod.jpg"
+
+    },
+    {
+      "id":3,
+      "title": "Bouncer H-set",
+      "price":6280,
+      "subtitle":"HeadPhones",
+      "img":"./assets/Products/Headphone.jpg"
+
     }
-  ]
+  ] 
   
+,
+  "clothing":[
+    {
+    "id": 1,
+      "title": "Unisex Jacket",
+      "price":8000,
+      "subtitle":"Jacket",
+      "img":"./assets/Products/UnisexJacket.jpg"
+  },
+  {
+    "id":2,
+    "title": "Trident-Sunglass",
+    "price":5000,
+    "subtitle":"Glass",
+    "img":"./assets/Products/Sunglasses.jpg"
+
+  },
+  {
+    "id":3,
+    "title": "Port-Charger",
+    "price":35000,
+    "subtitle":"Charger",
+    "img":"./assets/Products/electric-car.jpg"
+
+  }
+]
 }

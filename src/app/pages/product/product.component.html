@@ -1,0 +1,77 @@
+<app-header></app-header> 
+<body>
+  <mat-toolbar>
+    <span>PRODUCTS</span>
+    <span class="example-spacer"></span>
+    <button (click)="GotoCartPage()"  mat-icon-button><mat-icon matBadge={{BadgeCount}} matBadgeColor="warn">shopping_cart</mat-icon></button>
+  </mat-toolbar>
+  <div class="d-flex justify-content-center">
+    <carousel  style="border: 1px solid grey;width: 900px;" class="d-flex justify-content-center" >
+      <div class="carousel-cell">
+        <img src="./assets/Products/Productcarousal1.jpg" class="img">
+      </div>
+      <div class="carousel-cell">
+        <img src="./assets/Products/Productcarousal1.jpg" class="img">
+      </div>
+      <div class="carousel-cell">
+        <img src="./assets/Products/Productcarousal1.jpg" class="img">
+      </div>
+      <div class="carousel-cell">
+        <img src="./assets/Products/Productcarousal1.jpg" class="img">
+      </div>
+      <div class="carousel-cell">
+        <img src="./assets/Products/Productcarousal1.jpg" class="img">
+      </div>
+    </carousel>
+
+  </div><br>
+  <div style="border: 1px solid grey;padding:15px;">
+    <mat-icon>headset</mat-icon> <b>HEADPHONES </b>
+  </div>
+   
+    <br>
+    <div class="d-flex justify-content-center">
+      <mat-card class="example-card" *ngFor="let items of ProductData">
+        <mat-card-header>
+          <mat-card-title>{{items.title}}</mat-card-title>
+          <mat-card-subtitle>{{items.subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{items.img}}>
+        <mat-card-actions>
+          <hr>
+          <button mat-button (click)="addTocart(items)"><mat-icon>add_shopping_cart</mat-icon></button>
+         <small>PRICE : {{items.price|currency:'INR'}}</small>&nbsp;
+          <button class="btn btn-outline-info">Info</button>
+        </mat-card-actions>
+      </mat-card>
+        
+    </div><br><br>    
+
+    <div style="border: 1px solid grey;padding:15px;">
+      <mat-icon>supervisor_account</mat-icon><b>ACCESSORIES </b>
+    </div><br><br>
+
+    <div class="d-flex justify-content-center">    
+      <mat-card class="example-card" *ngFor="let items of ClothingData">
+        <mat-card-header>
+          <mat-card-title>{{items.title}}</mat-card-title>
+          <mat-card-subtitle>{{items.subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{items.img}}>
+        <mat-card-actions>
+          <hr>
+          <button mat-button (click)="addTocart(items)"><mat-icon>add_shopping_cart</mat-icon></button>
+          <small>PRICE : {{items.price|currency:'INR'}}</small>&nbsp;
+          <button class="btn btn-outline-info">Info</button>
+        </mat-card-actions>
+      </mat-card><br><br><br> 
+    </div>
+    
+   
+    <div id="footer">
+      <br>
+      copyrights
+    </div>
+</body>
+
+

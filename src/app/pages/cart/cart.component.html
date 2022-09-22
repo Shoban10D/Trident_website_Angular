@@ -1,0 +1,25 @@
+<app-header></app-header>
+<br>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>PRODUCT</th>
+                <th>TITLE</th>
+                <th>PRICE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let items of CartItems">
+                <td><img src={{items.img}} style="height: 100px;width:100px;"></td>
+                <td>{{items.title}}</td>
+                <td>{{items.price}}</td>
+                <td><button (click)="RemoveFromCart(items)" class="btn btn-outline-danger">Remove</button></td>
+            </tr>
+        </tbody>    
+        
+    </table>
+    
+
+</div>

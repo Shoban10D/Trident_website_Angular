@@ -8,9 +8,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatTableModule} from '@angular/material/table';
 const MaterialModule = [MatToolbarModule,MatButtonModule,MatIconModule,MatMenuModule,MatSidenavModule,
-                        MatListModule,MatButtonToggleModule,MatCardModule,MatInputModule]
+                        MatListModule,MatButtonToggleModule,MatCardModule,MatInputModule,MatBadgeModule,MatTableModule]
 
 @NgModule({
   declarations: [],

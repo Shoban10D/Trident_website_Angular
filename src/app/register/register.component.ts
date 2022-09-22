@@ -53,5 +53,4 @@ export class RegisterComponent implements OnInit {
     this.service.dbUserInfo$.next(UserData);
   }
 
-
 }

@@ -9,15 +9,21 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialsModule } from '../MATERIALMODULE/materials/materials.module';
+import { ProductComponent } from './product/product.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     ChangepwdComponent,
     HeaderComponent,
+    ProductComponent,
+    CartComponent,
   ],
   imports: [
     SharedModule,
+    IvyCarouselModule,
     MaterialsModule,
     CommonModule,
     ReactiveFormsModule,
