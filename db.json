@@ -3,14 +3,18 @@
     {
       "id": 1,
       "title": "TRIDENT - Skull",
+      "DefaultPrice":2300,
       "price":2300,
+      "quantity":1,
       "subtitle":"Neck Band",
       "img":"./assets/Products/Neckband.jpg"
     },
     {
       "id":2,
       "title": "Earpod - GenZ",
+      "DefaultPrice":4000,
       "price":4000,
+      "quantity":1,
       "subtitle":"Earpod",
       "img":"./assets/Products/earpod.jpg"
 
@@ -18,7 +22,9 @@
     {
       "id":3,
       "title": "Bouncer H-set",
+      "DefaultPrice":6280,
       "price":6280,
+      "quantity":1,
       "subtitle":"HeadPhones",
       "img":"./assets/Products/Headphone.jpg"
 
@@ -30,14 +36,18 @@
     {
     "id": 1,
       "title": "Unisex Jacket",
+      "DefaultPrice":8000,
       "price":8000,
+      "quantity":1,
       "subtitle":"Jacket",
       "img":"./assets/Products/UnisexJacket.jpg"
   },
   {
     "id":2,
     "title": "Trident-Sunglass",
+    "DefaultPrice":5000,
     "price":5000,
+    "quantity":1,
     "subtitle":"Glass",
     "img":"./assets/Products/Sunglasses.jpg"
 
@@ -45,7 +55,9 @@
   {
     "id":3,
     "title": "Port-Charger",
+    "DefaultPrice":35000,
     "price":35000,
+    "quantity":1,
     "subtitle":"Charger",
     "img":"./assets/Products/electric-car.jpg"
 

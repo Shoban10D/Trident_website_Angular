@@ -1,0 +1,13 @@
+#body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 12px;
+    background-color: black;
+}
+.d-inline-block{
+    padding-right: 100px;
+    padding-left: 120px;
+}
+#logo{
+    width: 1000px;;
+    padding-left: 750px;
+}

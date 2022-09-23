@@ -1,25 +1,61 @@
 <app-header></app-header>
 <br>
+<body>
+
 <div class="container">
-    <table class="table table-striped">
+    <div style="border: 1px solid grey;padding:15px;" class="d-flex justify-content-center">
+        <mat-icon>shopping_cart</mat-icon><b>C H E C K O U T</b>
+      </div><br><br>
+    
+    <table class="table table-striped" *ngIf="TotalValue!=0">       
         <thead>
             <tr>
                 <th>PRODUCT</th>
-                <th>TITLE</th>
+                <th>NAME</th>
+                <th>QUANTITY</th>
                 <th>PRICE</th>
                 <th>ACTION</th>
             </tr>
         </thead>
+        <br>
         <tbody>
             <tr *ngFor="let items of CartItems">
                 <td><img src={{items.img}} style="height: 100px;width:100px;"></td>
                 <td>{{items.title}}</td>
-                <td>{{items.price}}</td>
-                <td><button (click)="RemoveFromCart(items)" class="btn btn-outline-danger">Remove</button></td>
+                <td>
+                    <button mat-mini-fab color="success" (click)="AddQuantity(items)">+</button> &nbsp;&nbsp;&nbsp;
+                    <input type="number" id="number" #Quantity (keyup)="QuantityInput(Quantity.value,items)" value="{{items.quantity}}" > &nbsp;&nbsp;&nbsp;
+                    <button mat-mini-fab color="warn" (click)="ReduceQuantity(items)">-</button>
+                </td>
+                <td>{{items.price |currency:'INR'}}</td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;
+                    <button (click)="RemoveFromCart(items)" class="btn btn-outline-danger"><mat-icon>remove_shopping_cart</mat-icon></button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><b>Total</b></td>
+                <td>{{TotalValue | currency:'INR'}}</td>
             </tr>
         </tbody>    
         
-    </table>
+    </table>        
+</div>
+    
     
 
+
+<div *ngIf="TotalValue==0">
+    <button mat-icon-button [routerLink]="['/Pages/product']"><mat-icon>keyboard_backspace</mat-icon></button>
+    Back to Store?
+     <br><br> <br><br> <br><br> <br><br> <br><br> <br>
+     <h1 class="d-flex justify-content-center">
+        <mat-icon class="myIcon">not_interested</mat-icon>
+     </h1>
 </div>
+
+
+</body>
+<app-footer></app-footer>
+

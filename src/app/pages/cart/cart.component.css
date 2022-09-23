@@ -1,0 +1,23 @@
+
+
+.myIcon{
+    color: rgb(255, 224, 224);
+    zoom: 15;
+}
+#number{
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 20px;
+    width: 80px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input{
+    text-align: center;
+}
+
+
+  

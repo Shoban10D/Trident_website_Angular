@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductDataService } from 'src/app/Services/product-data.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -8,17 +9,14 @@ import { Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private productService:ProductDataService,private route:Router) { 
-    interface TableContents{
-    
-    }
+  constructor(private productService:ProductDataService,private route:Router,private toast:ToastrService) { 
   }
   ProductData:any;
+  ProductDataPrice:any;
   ClothingData:any;
+  ClothingDataPrice:any;
   SelectedItems:any=[];
-  BadgeCount:number=0;
-
-  
+  BadgeCount:number=0; 
 
   ngOnInit(): void {
     //removedArrayofSelectedItemsfromCartComponent
@@ -33,7 +31,9 @@ export class ProductComponent implements OnInit {
     //Getting Earphones data
     this.productService.getProductdata().subscribe((data)=>{
       this.ProductData = data;
+      this.ProductDataPrice = data;
       console.log(this.ProductData,'earphones data');
+      console.log(this.ProductDataPrice,'Price');
     })
 
     //Getting Clothing data
@@ -42,10 +42,35 @@ export class ProductComponent implements OnInit {
     })
   }
 
+  getBadgeCount(){
+    for(let badgevalues of this.SelectedItems){
+      this.BadgeCount += badgevalues.quantity;
+    }
+  }
+
   addTocart(item:any){
-    this.SelectedItems.push(item);
+
+    //This section is for Quantity and Price Updating//
+    let count:number=0;
+    for(let values of this.SelectedItems){
+     
+        if(item.subtitle==values.subtitle){
+          count++;          
+        }
+    }
+    if(count>0){
+      this.toast.info(item.title,'1 more + to cart')
+      console.log("this selected item is added to card more than 1")
+      item.quantity+=1;
+      item.price+=item.DefaultPrice;  
+      console.log(item,'updated quantity value');
+      console.log(this.SelectedItems);
+    }else if(count==0){
+      this.SelectedItems.push(item);
     this.BadgeCount = this.SelectedItems.length;
-    console.log(this.SelectedItems);    
+    console.log(this.SelectedItems,'Items pushed');
+    }
+      
   }
 
   GotoCartPage(){
