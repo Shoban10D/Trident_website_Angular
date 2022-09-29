@@ -50,8 +50,8 @@
           <app-password-validator  [pwd]="pwdChecker" (PasswordResult)="MainPassword($event)"></app-password-validator>
           <button class="btn btn-outline-danger" (click)="onSubmit(Register.value)" [class.d-none]="!SubmitHide || Register.invalid"><mat-icon> directions_car</mat-icon></button>
         </form>
-        <a href="#">
-        <small class="d-flex justify-content-end">Existing User?</small></a>
+        <a [routerLink]="['/login']">
+        <small class="d-flex justify-content-end" >Existing User?</small></a>
 
       </mat-card>
     </div>

@@ -11,7 +11,17 @@ mat-toolbar{
     font-size:xx-large;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     cursor: grab;
+    transition: all ease-in-out 0.5s;
+}
+#EnterpriseName:hover{
+    padding: 20px;
+    transition: all ease-in-out 0.5s;
 }
 #logo{
     width: 150px;
+}
+
+#logo:hover{
+    padding: 10px;
+    transition: 0.9s;
 }

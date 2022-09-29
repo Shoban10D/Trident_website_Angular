@@ -14,7 +14,7 @@ body{
 }
 
 #body{
-    background-image: url("https://wallpaper.dog/large/10809218.jpg");
+    background-image:linear-gradient(to left,rgba(0, 0, 0, 0.5),rgba(145, 7, 7, 0.40)) ,url("https://wallpaper.dog/large/10809218.jpg");
   height: 100%;
   width: 100%;
   background-position: center;

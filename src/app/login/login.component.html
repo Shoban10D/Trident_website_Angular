@@ -21,6 +21,7 @@
                             <input matInput formControlName="Password">
                             </mat-form-field><br>
                             <small class="d-flex justify-content-end">Forgot Password?</small>
+                            <a [routerLink]="['/register']" class="d-flex justify-content-end">Create an Account</a>
                             <br><br>                            
                             <button [class.d-none]="Login.invalid" class="btn btn-outline-info" (click)="Onsubmit(Login.value)"><mat-icon> vpn_key</mat-icon></button>
                          </form>

@@ -19,7 +19,7 @@ body{
   }
 
 #cardHolder{
-    background-image: linear-gradient(to right,rgb(230 230 230) ,white);
+    background-image: linear-gradient(to right,rgb(230 230 230) 50%,rgb(208, 234, 238));
     padding: 100px;;
    margin: auto;
 }
