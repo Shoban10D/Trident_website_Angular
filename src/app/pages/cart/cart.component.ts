@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { ProductDataService } from 'src/app/Services/product-data.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProductDataService } from 'src/app/Services/product-data.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private ActiveRoute:ActivatedRoute,private ProductService:ProductDataService) { }
+  constructor(private ActiveRoute:ActivatedRoute,private ProductService:ProductDataService, private route:Router) { }
   CartItems:any = [];
   TotalValue:number=0;
 
@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
     if(Access){
       this.CartItems = this.ProductService.ToCart();
       console.log(this.CartItems);
+      this.ProductService.RemovedList$.next(this.CartItems);
       this.TotalValue=0;
       this.total();
     }        
@@ -69,6 +70,10 @@ export class CartComponent implements OnInit {
     }
     this.TotalValue=0;
     this.total();    
+  }
+
+  GoToPayment(){
+    this.route.navigate(['Pages/product/cart/payment',{total:this.TotalValue}]);
   }
 
 }

@@ -1,0 +1,86 @@
+<app-header></app-header>
+<h1 style="text-align:center;background-color:grey;color:white;">P A Y M E N T</h1>
+<body class="container-fluid" style="background-color:rgb(230, 230, 230);">
+       
+    <br><br>
+   
+       
+
+    <div class="container" style="background-color:rgb(255, 255, 255);display:inline-flex;" id="cardHolder">
+        <br><br><br>
+       
+
+        <mat-card class="example-card" id="ChooseCard">
+            <mat-card-header>
+                <mat-card-subtitle style="color:white;"> RECEIPT FOR</mat-card-subtitle> 
+                <mat-card-title style="color:white;">{{RecieptName}}</mat-card-title>        
+            </mat-card-header>
+            <hr>
+            <mat-icon id="icon">account_balance_wallet</mat-icon> &nbsp; A M O U N T<br><br>
+            {{TotalAmount | currency:'INR'}}
+            <hr>
+            <mat-icon id="icon">date_range</mat-icon>&nbsp; D A T E<br><br>
+            {{today | date:'fullDate'}}
+            <hr>
+            <mat-icon id="icon"> location_on</mat-icon>&nbsp; L O C A T I O N <br><br>
+            Chennai
+            <hr>
+            <mat-icon id="icon">event_note</mat-icon>&nbsp; R E F E R E N C E &nbsp;&nbsp;&nbsp;I D<br><br>
+            X310JK69FOR732
+        </mat-card>
+
+         <mat-card class="example-card" id="paymemt" style="height: 500px;width: 500px;text-align: center;">
+   
+            <button mat-button id="card" (click)="togglemode=true">CARD <mat-icon>credit_card</mat-icon></button>|
+            <button mat-button id="bank" (click)="togglemode=false"><mat-icon>account_balance</mat-icon> ONLINE</button> 
+            <hr>
+            <div *ngIf="togglemode, then card, else online">
+
+            </div>
+            <ng-template #card>
+                <small style="color:grey;">Enter the 16 digit card number on the card</small><br>
+              
+                    <input type="number" onKeyPress="if(this.value.length==4) return false;" style="width:70px;display:inline-block;" class="form-control"  placeholder="XXXX">&nbsp;
+                    <input type="number" onKeyPress="if(this.value.length==4) return false;" style="width:70px;display:inline-block;" class="form-control"  placeholder="XXXX">&nbsp;
+                    <input type="number" onKeyPress="if(this.value.length==4) return false;" style="width:70px;display:inline-block;" class="form-control"  placeholder="XXXX">&nbsp;
+                    <input type="number" onKeyPress="if(this.value.length==4) return false;" style="width:70px;display:inline-block;" class="form-control"  placeholder="XXXX">
+                    <br><br>
+                    CVV
+                    <input type = 'number' class="form-control" placeholder="CVV" ><br>
+                    EXPIRY DATE
+                    <input type = 'number' onKeyPress="if(this.value.length==2) return false" class="form-control" style="width:70px;display:inline-block;"> /
+                    <input type = 'number' onKeyPress="if(this.value.length==2) return false" class="form-control" style="width:70px;display:inline-block;">
+                    <br><br>
+                    <input type="checkbox"> I Hereby confirm to do the Online transaction with Trident<br><br>
+                    <button class="btn btn-outline-success">PAY</button>         
+               
+            </ng-template>
+            <ng-template #online>
+                <form>
+                    <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" placeholder="BANK ID"><br>
+                    <select class="form-select form-select-sm">
+                        <option selected>BANK NAME</option>
+                        <option value="1">INDIAN BANK</option>
+                        <option value="2">HDFC</option>
+                        <option value="3">STATE BANK</option>
+                      </select><br>
+                      <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" placeholder="ONLINE TRANSACTION ID"><br>
+                      <input type="password" class="form-control" aria-describedby="inputGroup-sizing-sm" placeholder="ONLINE TRANSACTION PASSWORD"><br>
+                      <input type="checkbox"> I Hereby confirm to do the Online transaction with Trident<br><br>
+                      <button class="btn btn-outline-success">PAY</button>
+                </form>
+            </ng-template>
+
+        </mat-card>     
+      <br>
+
+
+    </div>
+    
+</body>
+<div>
+    <app-footer></app-footer>
+</div>
+
+
+

@@ -12,6 +12,7 @@ import { MaterialsModule } from '../MATERIALMODULE/materials/materials.module';
 import { ProductComponent } from './product/product.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CartComponent } from './cart/cart.component';
     HeaderComponent,
     ProductComponent,
     CartComponent,
+    PaymentComponent,
   ],
   imports: [
     SharedModule,

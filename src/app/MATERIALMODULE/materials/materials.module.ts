@@ -10,8 +10,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTableModule} from '@angular/material/table';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 const MaterialModule = [MatToolbarModule,MatButtonModule,MatIconModule,MatMenuModule,MatSidenavModule,
-                        MatListModule,MatButtonToggleModule,MatCardModule,MatInputModule,MatBadgeModule,MatTableModule]
+                        MatListModule,MatButtonToggleModule,MatCardModule,MatInputModule,MatBadgeModule,MatTableModule,MatProgressBarModule]
 
 @NgModule({
   declarations: [],

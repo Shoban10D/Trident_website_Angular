@@ -1,0 +1,46 @@
+body{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  #ChooseCard{
+    color: antiquewhite;
+    background-color: black;   
+    width: 800px;
+  }
+#icon{
+    zoom: 100%;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,1), 
+                0 1px 1px 0 rgba(0,0,0,1), 
+                0 1px 3px 0 rgba(0,0,0,1);
+}
+.example-card{
+    margin-left: 80px;
+  }
+
+#cardHolder{
+    background-image: linear-gradient(to right,rgb(230 230 230) ,white);
+    padding: 100px;;
+   margin: auto;
+}
+#card{
+    transition: all ease-in-out 0.8s;
+}
+#card:hover{
+    padding-right: 50px;
+    transition: all ease-in-out 0.8s;
+}
+#bank{
+    transition: all ease-in-out 0.8s;
+}
+#bank:hover{
+    padding-left: 50px;
+    transition: all ease-in-out 0.8s;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+ 

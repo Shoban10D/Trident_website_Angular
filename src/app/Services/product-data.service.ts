@@ -18,7 +18,7 @@ export class ProductDataService {
     return this.http.get('http://localhost:3000/clothing')
   }
   
-  getSelectedItemsFromProduct(selectedItem?:any){
+  getSelectedItemsFromProduct(selectedItem:any){
     this.Items = selectedItem;
   }
   ToCart(){

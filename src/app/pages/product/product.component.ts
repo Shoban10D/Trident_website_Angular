@@ -16,6 +16,7 @@ export class ProductComponent implements OnInit {
   ClothingData:any;
   ClothingDataPrice:any;
   SelectedItems:any=[];
+  FromCart:boolean=false;
   BadgeCount:number=0; 
 
   ngOnInit(): void {
@@ -23,11 +24,12 @@ export class ProductComponent implements OnInit {
     this.productService.RemovedList$.subscribe((data)=>{
       if(data){
         this.SelectedItems =  data;
-        this.BadgeCount = this.SelectedItems.length
+        this.BadgeCount = this.SelectedItems.length;
         console.log(this.SelectedItems,'from cart');
-      }
-      
+        this.FromCart = true;
+      }      
     })
+
     //Getting Earphones data
     this.productService.getProductdata().subscribe((data)=>{
       this.ProductData = data;
@@ -49,11 +51,13 @@ export class ProductComponent implements OnInit {
   }
 
   addTocart(item:any){
+    if(this.FromCart==true){
+      console.log("this data is from cart", this.SelectedItems);
+    }
 
     //This section is for Quantity and Price Updating//
     let count:number=0;
-    for(let values of this.SelectedItems){
-     
+    for(let values of this.SelectedItems){     
         if(item.subtitle==values.subtitle){
           count++;          
         }
@@ -61,8 +65,8 @@ export class ProductComponent implements OnInit {
     if(count>0){
       this.toast.info(item.title,'1 more + to cart')
       console.log("this selected item is added to card more than 1")
-      item.quantity+=1;
-      item.price+=item.DefaultPrice;  
+      item.quantity++;
+      item.price+=item.DefaultPrice;
       console.log(item,'updated quantity value');
       console.log(this.SelectedItems);
     }else if(count==0){
@@ -70,12 +74,14 @@ export class ProductComponent implements OnInit {
     this.BadgeCount = this.SelectedItems.length;
     console.log(this.SelectedItems,'Items pushed');
     }
+   
       
   }
 
   GotoCartPage(){
     this.productService.getSelectedItemsFromProduct(this.SelectedItems);
     this.route.navigate(['Pages/product/cart',{access:true}]);
+    this.FromCart = false;
   }
 
 
