@@ -11,24 +11,39 @@
     background-color: rgba(0, 0, 0, 0.5);  
     text-align: center;       
 } */
+body{
+    
+}
 mat-card{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 1px solid;
-    padding: 10px;
     border-radius: 20px;
-    font-size: xx-large;
-    height: 50%;
-    left:5%;
     text-align: center;      
 }
+
+#emailCard{
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255,0.5);
+    width: 500px;
+    height:1000px;
+}
+
+
 #resetMatCard{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 1px solid red;
-    padding: 10px;
+    padding: 5px;
     border-radius: 20px;
-    font-size: x-large;
     width: 500px;
     height: 50%;
     left:5%;
     text-align: center;  
+}
+#body{
+    background-image: url('/assets/images/ChangePassword.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
