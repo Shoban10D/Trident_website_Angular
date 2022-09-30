@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import { UserdetailsService } from '../../Services/userdetails.service';
 import { Router } from '@angular/router';
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ChangepwdComponent implements OnInit {
 EmailConfirm!:FormGroup;
-  constructor(private fb:FormBuilder,private toast:ToastrService,private route:ActivatedRoute,private routing:Router) { }
+  constructor(private fb:FormBuilder,private route:ActivatedRoute,private routing:Router) { }
   UserData:any;
   read:boolean = false;
   user:string|any;
@@ -47,7 +46,7 @@ EmailConfirm!:FormGroup;
       this.SWITCH = true;
       clearInterval(this.interval);
     }else{
-      this.toast.error('OTP invalid')
+      // this.toast.error('OTP invalid')
     }
     
   }
@@ -66,14 +65,14 @@ EmailConfirm!:FormGroup;
         FromLocalStorage.Password = this.pwdChecker;
         FromLocalStorage.ConfirmPassword = this.pwdChecker;        
         localStorage.setItem("UserData",JSON.stringify(FromLocalStorage));
-        this.toast.success('Password changed succesfully')
+        // this.toast.success('Password changed succesfully')
         this.routing.navigate(['/login']);
       }else{
-        this.toast.error('Please Satisfy the validation')
+        // this.toast.error('Please Satisfy the validation')
       }
       
     }else{
-      this.toast.error('Passwords do not match')
+      // this.toast.error('Passwords do not match')
     }
   }
 
@@ -91,7 +90,7 @@ EmailConfirm!:FormGroup;
     this.TimerClick++;
 
     if(this.TimerClick==1){
-      this.toast.info('OTP sent to your mail, will expire within 2 min');
+      // this.toast.info('OTP sent to your mail, will expire within 2 min');
       this.interval = setInterval(() => {
         if (this.Minute > 0) {
           this.Seconds--;
@@ -105,8 +104,8 @@ EmailConfirm!:FormGroup;
             this.Seconds--;
           } else {
             clearInterval(this.interval);
-            this.toast.info('OTP expired');
-            this.routing.navigate(['/Pages/home']);
+            // this.toast.info('OTP expired');
+            this.routing.navigate(['/pages/home']);
           }
           this.count++;
         }

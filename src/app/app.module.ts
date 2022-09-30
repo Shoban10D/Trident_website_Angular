@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PasswordValidatorComponent } from './shared/password-validator/password-validator.component';
 import { AuthServiceService } from './Services/auth-service.service';
-import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
 import { MaterialsModule } from './MATERIALMODULE/materials/materials.module';
 @NgModule({
@@ -28,7 +27,6 @@ import { MaterialsModule } from './MATERIALMODULE/materials/materials.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
     PagesModule
   ],
   providers: [AuthServiceService],

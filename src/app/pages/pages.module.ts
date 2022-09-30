@@ -6,13 +6,14 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ChangepwdComponent } from './changepwd/changepwd.component'
 import { HeaderComponent } from '../shared/header/header.component';
-import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialsModule } from '../MATERIALMODULE/materials/materials.module';
 import { ProductComponent } from './product/product.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PaymentComponent } from './payment/payment.component';
     ProductComponent,
     CartComponent,
     PaymentComponent,
+    InventoryComponent,
   ],
   imports: [
     SharedModule,

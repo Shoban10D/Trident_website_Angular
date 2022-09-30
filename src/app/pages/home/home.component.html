@@ -3,9 +3,11 @@
             <mat-sidenav #sidenav mode="over"><b>ACCOUNT</b>
                 <hr>
                     <mat-nav-list>
-                            <button mat-list-item (click)="changePWD()"><mat-icon>build</mat-icon> Change Password</button>
-                            <button mat-list-item (click)="logout()"><mat-icon>exit_to_app </mat-icon> Logout</button>
-                            <button mat-list-item><mat-icon> directions_car</mat-icon>Book a Test Ride</button>
+                      <button mat-list-item id="sidenavbutt"><mat-icon> directions_car</mat-icon>Book a Test Ride</button>
+                      <button mat-list-item id="sidenavbutt" [routerLink]="['/Pages/inventory']"><mat-icon> table_chart</mat-icon>&nbsp;Inventory</button>
+                      <button mat-list-item (click)="changePWD()" id="sidenavbutt"><mat-icon>build</mat-icon> Change Password</button>
+                      <button mat-list-item id="sidenavbutt"><mat-icon>settings</mat-icon> Setting</button>
+                      <button mat-list-item (click)="logout()" id="sidenavbutt"><mat-icon>exit_to_app </mat-icon> Logout</button>
                     </mat-nav-list>
             </mat-sidenav>
     <mat-sidenav-content>

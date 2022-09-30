@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['/login']);
   }
   changePWD(){
-    this.route.navigate(['/Pages/ChangePwd',{access:'true'}]);
+    this.route.navigate(['/Pages/change-pwd',{access:'true'}]);
   }
 
 }

@@ -63,13 +63,14 @@ export class ProductComponent implements OnInit {
         }
     }
     if(count>0){
-      this.toast.info(item.title,'1 more + to cart')
+      this.toast.success('+1 Added cart');
       console.log("this selected item is added to card more than 1")
       item.quantity++;
       item.price+=item.DefaultPrice;
       console.log(item,'updated quantity value');
       console.log(this.SelectedItems);
     }else if(count==0){
+      this.toast.success('Added to cart')
       this.SelectedItems.push(item);
     this.BadgeCount = this.SelectedItems.length;
     console.log(this.SelectedItems,'Items pushed');

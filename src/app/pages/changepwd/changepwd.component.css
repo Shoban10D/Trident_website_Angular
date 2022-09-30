@@ -1,49 +1,46 @@
-/* mat-card{
-    border: 0.5px solid rgb(80, 17, 17);
+
+
+#emailCard{
+    border: 0.5px solid rgb(43, 0, 0);
     text-align: left;
     text-align: start;
     border-radius: 30px;   
     color: azure;
-    width: 20%;
-    height: 40%;
+    width: 30%;
+    height: 600px;
     top:5%;
-    left: 78%;
-    background-color: rgba(0, 0, 0, 0.5);  
-    text-align: center;       
-} */
-body{
-    
-}
-mat-card{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border: 1px solid;
-    border-radius: 20px;
-    text-align: center;      
-}
-
-#emailCard{
-    border: 1px solid black;
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255,0.5);
-    width: 500px;
-    height:1000px;
+    left: 68%;
+    background-color: rgba(0, 0, 0, 0.3);  
+    text-align: center; 
+    font-size: x-large;    
 }
 
 
 #resetMatCard{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border: 1px solid red;
-    padding: 5px;
-    border-radius: 20px;
-    width: 500px;
-    height: 50%;
-    left:5%;
-    text-align: center;  
+    border: 0.5px solid rgb(255, 255, 255);
+    text-align: left;
+    text-align: start;
+    border-radius: 30px;   
+    color: azure;
+    width: 30%;
+    height: 600px;
+    top:5%;
+    left: 68%;
+    background-color: rgba(0, 0, 0, 0.3);  
+    text-align: center; 
+    font-size: x-large;   
 }
 #body{
-    background-image: url('/assets/images/ChangePassword.jpg');
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.1),black),url('/assets/images/ChangePassword.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
+::ng-deep .mat-form-field .mat-form-field-label {
+    color: rgb(184, 181, 181) !important;
+  }
+  ::ng-deep .mat-form-field  .mat-form-field-underline {
+    background-color: #D4AF37 ;
+  }

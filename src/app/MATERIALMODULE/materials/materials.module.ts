@@ -12,8 +12,10 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+
 const MaterialModule = [MatToolbarModule,MatButtonModule,MatIconModule,MatMenuModule,MatSidenavModule,
-                        MatListModule,MatButtonToggleModule,MatCardModule,MatInputModule,MatBadgeModule,MatTableModule,MatProgressBarModule,MdbCarouselModule]
+                        MatListModule,MatButtonToggleModule,MatCardModule,MatInputModule,MatBadgeModule,
+                        MatTableModule,MatProgressBarModule,MdbCarouselModule]
 
 @NgModule({
   declarations: [],
