@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "AngularEcommerce:build:production",
+            "firebaseProject": "trident-75619",
+            "firebaseHostingSite": "trident-75619"
+          }
         }
       }
     }

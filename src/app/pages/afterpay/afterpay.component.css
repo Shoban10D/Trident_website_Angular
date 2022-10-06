@@ -1,0 +1,27 @@
+#body{
+    background-image: url('/assets/images/Afterpay.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+}
+
+#Shop{
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 2px lightblue;
+    transition: all ease-in-out 0.9s;
+}
+
+#Shop:hover{
+    padding-left: 800px;
+    font-size: xx-large;
+}
+#msg{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: grey;
+}

@@ -15,6 +15,22 @@ import { PaymentComponent } from './payment/payment.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ToastrModule } from 'ngx-toastr';
 
+// import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+// import { environment } from 'src/environments/environment';
+// import { provideAuth,getAuth } from '@angular/fire/auth';
+// import { provideDatabase,getDatabase } from '@angular/fire/database';
+// import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
+import { AfterpayComponent } from './afterpay/afterpay.component';
+
+
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -24,6 +40,7 @@ import { ToastrModule } from 'ngx-toastr';
     CartComponent,
     PaymentComponent,
     InventoryComponent,
+    AfterpayComponent,
   ],
   imports: [
     SharedModule,
@@ -33,7 +50,18 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     FormsModule,
     PagesRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    FormsModule,ReactiveFormsModule,
+
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideAuth(() => getAuth()),
+    // provideDatabase(() => getDatabase()),
+    // provideFirestore(() => getFirestore())
   ]
 })
 export class PagesModule { }

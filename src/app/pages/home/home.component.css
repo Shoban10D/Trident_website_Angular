@@ -25,6 +25,7 @@
   }
   mat-toolbar{
     background-color: rgba(0, 0, 0, 0.010);  
+    position: fixed;
   }
 
   #sidenavbutt{
@@ -33,6 +34,7 @@
 
   #sidenavbutt:hover{
     padding-left: 70px;
+    color: rgb(57, 149, 255);
     transition: all ease-in-out 0.7s;
   }
 

@@ -1,0 +1,67 @@
+mat-toolbar{
+    height: 100px;
+    background-color: black;
+}
+#chooser{
+   background-image: linear-gradient(to bottom,black,rgb(128, 17, 17));
+    color: antiquewhite;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  } 
+  #EnterpriseName{
+    letter-spacing: 0.5em;
+    color: antiquewhite;
+    font-size:xx-large;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: grab;
+    transition: all ease-in-out 0.5s;
+}
+#EnterpriseName:hover{
+    padding: 20px;
+    transition: all ease-in-out 0.5s;
+}
+#logo{
+    width: 150px;
+}
+
+#logo:hover{
+    padding: 10px;
+    transition: 0.9s;
+}
+
+fieldset{
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+   
+}
+#button{
+    transition: all ease-in-out 0.6s;
+}
+#button:hover{
+    background-color: rgb(51, 51, 51);
+    transition: all ease-in-out 0.6s;
+}
+#accordian{
+    border: 1px solid black;
+    background-color: rgb(226, 185, 185);
+    color: white;
+    font-size: x-large;
+    border-radius: 15px;
+    padding: 10px;
+    transition: all ease-in-out 0.5s;
+}
+
+#table{
+    border: 1px solid maroon;
+    border-radius: 12px;
+    padding: 10px;
+  
+}
+
+#accordian:hover{
+    padding: 15px;
+    background-image: linear-gradient(to right,rgb(241, 114, 114),rgb(226, 185, 185));
+    transition: all ease-in-out 0.5s;
+}

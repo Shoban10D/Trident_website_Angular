@@ -3,19 +3,19 @@
             <mat-sidenav #sidenav mode="over"><b>ACCOUNT</b>
                 <hr>
                     <mat-nav-list>
-                      <button mat-list-item id="sidenavbutt"><mat-icon> directions_car</mat-icon>Book a Test Ride</button>
-                      <button mat-list-item id="sidenavbutt" [routerLink]="['/Pages/inventory']"><mat-icon> table_chart</mat-icon>&nbsp;Inventory</button>
-                      <button mat-list-item (click)="changePWD()" id="sidenavbutt"><mat-icon>build</mat-icon> Change Password</button>
-                      <button mat-list-item id="sidenavbutt"><mat-icon>settings</mat-icon> Setting</button>
+                      <button mat-list-item id="sidenavbutt"><mat-icon> directions_car</mat-icon>Book a Test Ride</button><br>
+                      <button mat-list-item id="sidenavbutt" [routerLink]="['/Pages/inventory']"><mat-icon> table_chart</mat-icon>&nbsp;Inventory</button><br>
+                      <button mat-list-item (click)="changePWD()" id="sidenavbutt"><mat-icon>build</mat-icon> Change Password</button><br>
+                      <button mat-list-item id="sidenavbutt"><mat-icon>settings</mat-icon> Settings</button><br>
                       <button mat-list-item (click)="logout()" id="sidenavbutt"><mat-icon>exit_to_app </mat-icon> Logout</button>
                     </mat-nav-list>
             </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar>
-                    <button mat-button (click)="sidenav.toggle()"><mat-icon>account_circle</mat-icon></button>
-                    <button mat-button>HOME</button>
-                    <button mat-button>ABOUT</button>
-                    <button mat-button [routerLink]="['/Pages/product']">PRODUCTS</button> 
+                    <button mat-button (click)="sidenav.toggle()"><mat-icon>account_circle</mat-icon></button>&nbsp;&nbsp;&nbsp;
+                    <button mat-button>H O M E</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button mat-button>A B O U T</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button mat-button [routerLink]="['/Pages/product']">P R O D U C T S</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span class="example-spacer"></span> 
                     <p id="EnterpriseName">TRIDENT</p>
         </mat-toolbar>

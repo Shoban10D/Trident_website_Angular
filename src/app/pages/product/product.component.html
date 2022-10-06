@@ -45,7 +45,8 @@
           <hr>
           <button mat-button (click)="addTocart(items)"><mat-icon>add_shopping_cart</mat-icon></button>
          <small>PRICE : {{items.DefaultPrice|currency:'INR'}}</small>&nbsp;
-          <button class="btn btn-outline-info">Info</button>
+          <button class="btn btn-outline-info" trigger="hover" mdbPopover={{items.Description}}
+          mdbPopoverTitle={{items.title}} placement="right">!</button>
         </mat-card-actions>
 
       </mat-card>
@@ -67,7 +68,8 @@
           <hr>
           <button mat-button (click)="addTocart(items)"><mat-icon>add_shopping_cart</mat-icon></button>
           <small>PRICE : {{items.DefaultPrice |currency:'INR'}}</small>&nbsp;
-          <button class="btn btn-outline-info">Info</button>
+          <button class="btn btn-outline-info" trigger="hover" mdbPopover={{items.Description}}
+          mdbPopoverTitle={{items.title}} placement="right">!</button>
         </mat-card-actions>
       </mat-card>
     </div><br><br><br>

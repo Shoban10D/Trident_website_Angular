@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { UserdetailsService } from '../Services/userdetails.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   Login!:FormGroup;
   user='1';
-  constructor(private fb:FormBuilder,private service:UserdetailsService,private route:Router) { }
+  constructor(private fb:FormBuilder,private service:UserdetailsService,private route:Router, private toast:ToastrService) { }
   LoginData:any=[];
 
   ngOnInit(): void {
@@ -32,8 +33,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('SessionUser',this.user);  
       localStorage.setItem('UserData',JSON.stringify(this.LoginData));
       this.route.navigate(['/Pages/home']);
+      this.toast.success("Login succesfull")
     }else{
-      console.log('no');
+        this.toast.error('Incorrect username / Password');
     }
     
   }

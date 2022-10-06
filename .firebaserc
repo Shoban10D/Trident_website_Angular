@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "trident-75619": {
+      "hosting": {
+        "AngularEcommerce": [
+          "trident-75619"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "trident-75619"
+  }
+}

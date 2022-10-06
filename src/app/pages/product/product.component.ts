@@ -32,16 +32,28 @@ export class ProductComponent implements OnInit {
 
     //Getting Earphones data
     this.productService.getProductdata().subscribe((data)=>{
-      this.ProductData = data;
-      this.ProductDataPrice = data;
-      console.log(this.ProductData,'earphones data');
-      console.log(this.ProductDataPrice,'Price');
+      this.ProductData = data.map((items:any)=>{
+        let data  = items.payload.doc.data()
+        return data;
+      })
+    
+      // this.ProductData = data;
+      // this.ProductDataPrice = data;
+      // console.log(this.ProductData,'earphones data');
+      // console.log(this.ProductDataPrice,'Price');
     })
 
     //Getting Clothing data
     this.productService.getProductdata2().subscribe((data)=>{
-      this.ClothingData = data;
+      this.ClothingData = data.map((items:any)=>{
+        let data  = items.payload.doc.data()
+        return data;
+      })
     })
+ 
+
+
+
   }
 
   getBadgeCount(){
@@ -64,13 +76,16 @@ export class ProductComponent implements OnInit {
     }
     if(count>0){
       this.toast.success('+1 Added cart');
+      alert('+1 added to cart');
       console.log("this selected item is added to card more than 1")
+
       item.quantity++;
       item.price+=item.DefaultPrice;
       console.log(item,'updated quantity value');
       console.log(this.SelectedItems);
     }else if(count==0){
       this.toast.success('Added to cart')
+      alert("item added to cart");    
       this.SelectedItems.push(item);
     this.BadgeCount = this.SelectedItems.length;
     console.log(this.SelectedItems,'Items pushed');

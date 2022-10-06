@@ -1,6 +1,7 @@
 <app-header></app-header>
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
-  </mat-drawer-container>
+<form [formGroup]="Inventory">
+  <input type="text" formControlName="email"><br>
+  <input type="text" formControlName="name">
+  <button class="btn btn-primary" (click)="submit(Inventory.value)">SUBMIT</button>
+</form>
 <app-footer></app-footer>

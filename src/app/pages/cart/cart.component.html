@@ -24,7 +24,7 @@
                 <td>{{items.title}}</td>
                 <td>
                     <button mat-mini-fab color="success" (click)="AddQuantity(items)">+</button> &nbsp;&nbsp;&nbsp;
-                    <input type="number" id="number" #Quantity (keyup)="QuantityInput(Quantity.value,items)" value="{{items.quantity}}" > &nbsp;&nbsp;&nbsp;
+                    <input type="number" id="number" min="1" max="2000" #Quantity (keyup)="QuantityInput(Quantity.value,items)" value="{{items.quantity}}" > &nbsp;&nbsp;&nbsp;
                     <button mat-mini-fab color="warn" (click)="ReduceQuantity(items)">-</button>
                 </td>
                 <td>{{items.price |currency:'INR'}}</td>

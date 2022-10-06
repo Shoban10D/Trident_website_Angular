@@ -12,11 +12,19 @@ import { PasswordValidatorComponent } from './shared/password-validator/password
 import { AuthServiceService } from './Services/auth-service.service';
 import { SharedModule } from './shared/shared.module';
 import { MaterialsModule } from './MATERIALMODULE/materials/materials.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AdminComponent } from './admin/admin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    AdminComponent,
   ],
   imports: [
     MaterialsModule,
@@ -27,7 +35,11 @@ import { MaterialsModule } from './MATERIALMODULE/materials/materials.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PagesModule
+    PagesModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]
