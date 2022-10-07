@@ -1,0 +1,32 @@
+
+<mat-toolbar class="d-flex justify-content-between">
+    <img id="logo" src="./assets/images/trident.jpg">
+    <button [routerLink]="['/login']" mat-button><mat-icon style="color:white;">power_settings_new</mat-icon></button>
+    <p  id="EnterpriseName">TRIDENT</p>
+</mat-toolbar>
+<body>
+    <div class="d-flex inline-block">    
+        <div>
+             <img [routerLink]="['/admin-car']" src="./assets/images/Admin_car.jpg" height="1000px" width="600px" id="card">
+             <div id="carText">
+                <p id="cText" style="color:rgb(255, 250, 209);">CAR</p>
+             </div>
+        </div>
+        <div>
+            <img [routerLink]="['/admin-earphone']" src="./assets/images/Admin_headphones.jpg" height="1000px" id="card">
+            <div id="HeadText">
+                <p id="eText" style="color:white">EARPHONES</p>
+            </div>
+        </div>
+        <div>
+            <img [routerLink]="['/admin-clothing']" src="./assets/images/Admin_cloth.jpg" height="1000px" width="565px" id="card">
+            <div id="ClothText">
+                <p id="clText" style="color:rgb(255, 255, 255);">CLOTHING</p>
+            </div>
+        </div>       
+    </div>
+    <app-footer></app-footer>
+</body>
+
+
+

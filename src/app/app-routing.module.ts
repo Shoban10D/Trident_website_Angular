@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
+import { AdminCarComponent } from './Admin/admin-car/admin-car.component';
+import { AdminClothingComponent } from './Admin/admin-clothing/admin-clothing.component';
+import { AdminHeadphonesComponent } from './Admin/admin-headphones/admin-headphones.component';
+import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -9,7 +12,10 @@ const routes: Routes = [
   {path:'',redirectTo:'register',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'admin',component:AdminComponent},
+  {path:'admin-home',component:AdminHomeComponent},
+  {path:'admin-clothing',component:AdminClothingComponent},
+  {path:'admin-earphone',component:AdminHeadphonesComponent},
+  {path:'admin-car',component:AdminCarComponent},
   {path:'Pages',loadChildren: () =>import('/home/decoders/Desktop/Angular/AngularEcommerce/src/app/pages/pages.module').then((m) => m.PagesModule),}];
 
 @NgModule({

@@ -1,0 +1,46 @@
+<mat-toolbar style="height:100px;background-color: black;" class="d-flex justify-content-between">
+    <img id="logo" [routerLink]="['/admin-home']" src="./assets/images/trident.jpg" height="100px" width="150px">
+    <p style="color:antiquewhite;letter-spacing: 30px;">WELCOME ADMIN</p>
+    <p  style="color:white;letter-spacing:20px;">TRIDENT</p>
+</mat-toolbar>
+<br>
+<div class="d-flex justify-content-center">
+    <form [formGroup]="ProductAdd2">
+        <h1>C L O T H I N G</h1><mat-icon>group</mat-icon>  
+
+        <fieldset style="background-color:rgb(255, 241, 241);">
+           
+      
+            <mat-form-field appearance="outline">
+                <mat-label>Product Name</mat-label>
+                <input matInput placeholder="Name" formControlName="title">
+            </mat-form-field>&nbsp;&nbsp;
+            <mat-form-field appearance="outline">
+                <mat-label>Product Subtitle</mat-label>
+                <input matInput placeholder="Subtitle" formControlName="subtitle">
+            </mat-form-field><br>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Price</mat-label>
+                <input type="number" matInput placeholder="Amount" formControlName="price">
+            </mat-form-field> &nbsp;
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Brief" formControlName="Description" >
+                </textarea>
+            </mat-form-field><br>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Image URL</mat-label>
+                <input matInput placeholder="URL" formControlName="img"  >
+            </mat-form-field>
+
+
+
+        </fieldset>
+        <br>
+        <button [class.d-none]="ProductAdd2.invalid" class="btn btn-outline-primary" (click)="submit2(ProductAdd2.value)">PUSH</button>&nbsp;&nbsp;
+        <button [class.d-none]="ProductAdd2.invalid" class="btn btn-outline-danger" (click)="ProductAdd2.reset()">Reset</button>
+        <!-- {{ProductAdd.value | json}} -->
+    </form>        
+</div>

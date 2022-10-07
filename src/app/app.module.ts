@@ -17,18 +17,26 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { AdminComponent } from './admin/admin.component';
+import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
+import { AdminCarComponent } from './Admin/admin-car/admin-car.component';
+import { AdminHeadphonesComponent } from './Admin/admin-headphones/admin-headphones.component';
+import { AdminClothingComponent } from './Admin/admin-clothing/admin-clothing.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AdminComponent,
+    AdminHomeComponent,
+    AdminCarComponent,
+    AdminHeadphonesComponent,
+    AdminClothingComponent,
   ],
   imports: [
     MaterialsModule,
     SharedModule,
+    ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,

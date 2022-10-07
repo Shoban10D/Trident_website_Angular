@@ -1,0 +1,78 @@
+.example-spacer {
+    flex: 1 1 auto;
+  } 
+
+  mat-toolbar{
+    height: 100px;
+    background-color: black;
+}
+
+ #EnterpriseName{
+    letter-spacing: 0.5em;
+    color: antiquewhite;
+    font-size:xx-large;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: grab;
+    transition: all ease-in-out 0.5s;
+}
+#EnterpriseName:hover{
+    padding: 20px;
+    transition: all ease-in-out 0.5s;
+}
+#logo{
+    width: 150px;
+}
+
+#logo:hover{
+    padding: 10px;
+    transition: 0.9s;
+}
+
+#carText {   
+    position: absolute;
+    top: 600px;
+    left: 150px;
+}
+#HeadText{
+    position: absolute;
+    top: 600px;
+    left: 700px;
+}
+#ClothText{
+    position:absolute;
+    top: 600px;
+    left: 1350px;
+}
+    
+
+#cText{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 100px;
+  font-size: 50px;
+  text-shadow: 2px 2px black;
+}
+#eText{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 20px;
+  font-size: 50px;
+  text-shadow: 2px 2px black;
+}
+#clText{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 20px;
+  font-size: 50px;
+  text-shadow: 2px 2px black;
+}
+
+#card:hover{
+    transition: all ease-in-out 0.7s;
+    transform: scale(1.05);
+    filter:  drop-shadow(8px 8px 10px rgb(44, 0, 0)) contrast(200%) blur(2px);
+    border-radius: 20px;
+    cursor: grab; 
+   
+}
+#card{
+    border: 1px solid black;    
+    transition: all ease-in-out 0.7s; 
+}
