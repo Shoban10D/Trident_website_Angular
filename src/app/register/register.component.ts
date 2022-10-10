@@ -49,8 +49,9 @@ export class RegisterComponent implements OnInit {
     }
   }
   onSubmit(UserData:any){
-    this.route.navigate(['/login']);
-    this.service.dbUserInfo$.next(UserData);
+    this.service.registerUser(UserData.Email,UserData.Password);
+    //this.route.navigate(['/login']);
+    //this.service.dbUserInfo$.next(UserData);
   }
 
 }

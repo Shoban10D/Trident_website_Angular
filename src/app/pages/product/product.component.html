@@ -34,8 +34,8 @@
  
    
     <br>
-    <div class="d-flex justify-content-center">
-      <mat-card class="example-card" *ngFor="let items of ProductData; let i=index">
+    <div  *ngFor="let items of ProductData" id="headsetcard">
+      <mat-card class="example-card">     
         <mat-card-header>
           <mat-card-title>{{items.title}}</mat-card-title>
           <mat-card-subtitle>{{items.subtitle}}</mat-card-subtitle>
@@ -47,8 +47,7 @@
          <small>PRICE : {{items.DefaultPrice|currency:'INR'}}</small>&nbsp;
           <button class="btn btn-outline-info" trigger="hover" mdbPopover={{items.Description}}
           mdbPopoverTitle={{items.title}} placement="right">!</button>
-        </mat-card-actions>
-
+        </mat-card-actions>      
       </mat-card>
         
     </div><br><br>    
@@ -57,8 +56,8 @@
       <mat-icon>supervisor_account</mat-icon><b>ACCESSORIES </b>
     </div><br><br>
 
-    <div class="d-flex justify-content-center">    
-      <mat-card class="example-card" *ngFor="let items of ClothingData">
+    <div id="headsetcard" *ngFor="let items of ClothingData">    
+      <mat-card class="example-card" >
         <mat-card-header>
           <mat-card-title>{{items.title}}</mat-card-title>
           <mat-card-subtitle>{{items.subtitle}}</mat-card-subtitle>

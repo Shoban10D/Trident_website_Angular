@@ -7,7 +7,12 @@
   .example-card{
     max-width: 400px;
     display: inline-block;
-    margin-left: 150px;
+    margin-left: 170px;
+    margin-top: 20px;
+   
+  }
+  #headsetcard{
+    display: inline;
   }
 
   .mat-card:not([class*=mat-elevation-z]) {

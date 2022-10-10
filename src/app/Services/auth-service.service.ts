@@ -7,7 +7,13 @@ export class AuthServiceService {
 
   constructor() { }
 
-  getToken(){
-    return !!localStorage.getItem('SessionUser');
+  getToken():any{
+    return localStorage.getItem('SessionUser');
   }
+
+  getAdminToken():any{
+    return localStorage.getItem('SessionUser');
+  }
+
+ 
 }

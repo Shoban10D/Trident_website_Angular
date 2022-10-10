@@ -6,11 +6,22 @@
                 <small style="color:white;">TRIDENT</small>
                      
               </div>
-                        <mat-card>
-                            <br>
-                            <h2>L O G I N</h2>
-                            <hr>
-                         <form [formGroup]="Login" *ngIf="Login">
+        
+
+              <!--Login card-->
+             
+                <mat-card>
+                    <br>
+                    <button mat-button id="login" (click)="showTemplate=false"> <h2>L O G I N</h2></button>|
+                    <button mat-button id="admin" (click)="showTemplate=true"><h2>A D M I N</h2></button>
+                   
+                    <hr>
+                    <div *ngIf="showTemplate, then admin, else login">
+
+                    </div>
+
+                    <ng-template #login>
+                        <form [formGroup]="Login" *ngIf="Login">
                             <br>
                             <mat-form-field style="width: 300px;">
                                 <mat-label>EMAIL</mat-label>
@@ -25,7 +36,28 @@
                             <br><br>                            
                             <button [class.d-none]="Login.invalid" class="btn btn-outline-info" (click)="Onsubmit(Login.value)"><mat-icon> vpn_key</mat-icon></button>
                          </form>
-                        </mat-card>
+
+                    </ng-template>
+
+                    <ng-template #admin>
+                        <br>
+                        <mat-form-field style="width:300px;"> 
+                            <mat-label>ADMIN EMAIL</mat-label>
+                            <input matInput #email>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field style="width:300px;"> 
+                            <mat-label>ADMIN PASSWORD</mat-label>
+                            <input matInput #password>
+                        </mat-form-field>
+                        <br><br>
+                        <button [class.d-none]="email.value==''" class="btn btn-outline-info" (click)="checkForAdmin(email.value, password.value)"><mat-icon> vpn_key</mat-icon></button>
+                    </ng-template>
+                 
+                </mat-card>
+     
+
+                        
                         <!-- {{Login.value | json}} -->
         </div>
     </body>

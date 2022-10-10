@@ -1,7 +1,7 @@
 
 <mat-toolbar class="d-flex justify-content-between">
     <img id="logo" src="./assets/images/trident.jpg">
-    <button [routerLink]="['/login']" mat-button><mat-icon style="color:white;">power_settings_new</mat-icon></button>
+    <button [routerLink]="['/login']" mat-button (click)="signout()"><mat-icon style="color:white;">power_settings_new</mat-icon></button>
     <p  id="EnterpriseName">TRIDENT</p>
 </mat-toolbar>
 <body>
