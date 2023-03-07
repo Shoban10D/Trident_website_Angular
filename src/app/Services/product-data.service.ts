@@ -30,5 +30,9 @@ export class ProductDataService {
     return this.Items;
   }
 
+  getAlluserData(){
+    return this.store.collection('/UserData').snapshotChanges();
+  }
+
 
 }

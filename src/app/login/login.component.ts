@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   Login!:FormGroup;
   user='1';
   constructor(private fb:FormBuilder,private service:UserdetailsService,private route:Router, private toast:ToastrService) { }
-  LoginData:any=[];
+ 
   showTemplate:boolean = false;
 
   ngOnInit(): void {
@@ -45,6 +45,10 @@ export class LoginComponent implements OnInit {
 
   checkForAdmin(email:string,pwd:string){
     this.service.LoginasAdmin(email,pwd);
+  }
+
+  GoogleSignIn(){
+    this.service.GoogleLogin();
   }
 
   

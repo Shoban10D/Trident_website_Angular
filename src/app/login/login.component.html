@@ -1,8 +1,8 @@
 <html>
     <body>
-        <div id="body"><br>
+        <div id="body" class="container-fluid"><br>
             <div id="Header" style="text-align:center;">
-                <img id="logo" src="./assets/images/trident.jpg" alt="" class="d-flex justify-content-start">
+                <img id="logo" src="./assets/images/trident.jpg">
                 <small style="color:white;">TRIDENT</small>
                      
               </div>
@@ -10,32 +10,37 @@
 
               <!--Login card-->
              
-                <mat-card>
+                <mat-card >
                     <br>
                     <button mat-button id="login" (click)="showTemplate=false"> <h2>L O G I N</h2></button>|
                     <button mat-button id="admin" (click)="showTemplate=true"><h2>A D M I N</h2></button>
                    
                     <hr>
-                    <div *ngIf="showTemplate, then admin, else login">
+                    <div *ngIf="showTemplate, then admin, else login" >
 
                     </div>
 
                     <ng-template #login>
+                        <mat-card-actions>
                         <form [formGroup]="Login" *ngIf="Login">
                             <br>
-                            <mat-form-field style="width: 300px;">
+                            <mat-form-field >
                                 <mat-label>EMAIL</mat-label>
                                 <input matInput formControlName="email">
                             </mat-form-field><br><br><br>
-                            <mat-form-field style="width: 300px;">
+                            <mat-form-field >
                                 <mat-label>PASSWORD</mat-label>
                             <input matInput formControlName="Password">
                             </mat-form-field><br>
+                            <button class="d-flex justify-content-start" mat-icon-button (click)="GoogleSignIn()"> <img src="./assets/LOGO/icons8-google.svg"  height="30px" ></button>
+                            
                             <small class="d-flex justify-content-end">Forgot Password?</small>
                             <a [routerLink]="['/register']" class="d-flex justify-content-end">Create an Account</a>
-                            <br><br>                            
+                            <br>                         
                             <button [class.d-none]="Login.invalid" class="btn btn-outline-info" (click)="Onsubmit(Login.value)"><mat-icon> vpn_key</mat-icon></button>
+                  
                          </form>
+                        </mat-card-actions>
 
                     </ng-template>
 

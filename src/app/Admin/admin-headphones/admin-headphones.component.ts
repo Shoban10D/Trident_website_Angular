@@ -76,17 +76,20 @@ export class AdminHeadphonesComponent implements OnInit {
 
   getEarPhone(){
     this.service.getProductdata().subscribe((data)=>{
+      console.log(data);
       this.earPhoneArray = data.map((items:any)=>{
         let data  = items.payload.doc.data();
         data.id = items.payload.doc.id;
         return data;
       })
+      console.log(this.earPhoneArray);
     })
-    console.log(this.earPhoneArray,"-----<<<<");
+    
   }
 
     //delete from earphone database
     delete(data:any){
+      console.log(data);
       return this.store.doc('/neckband/'+data.id).delete();
     }
   

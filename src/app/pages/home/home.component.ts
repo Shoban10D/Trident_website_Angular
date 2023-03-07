@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppModule } from 'src/app/app.module';
 import { UserdetailsService } from 'src/app/Services/userdetails.service';
 
 @Component({
@@ -18,7 +19,16 @@ export class HomeComponent implements OnInit {
     this.service.Signout();
   }
   changePWD(){
-    this.route.navigate(['/Pages/change-pwd',{access:'true'}]);
+    let AdminUSer = localStorage.getItem('SessionUser');
+    let googleUser = localStorage.getItem('GoogleToken');
+    if(googleUser){
+      alert("Google users cannot change your password here!")
+    }else if(AdminUSer=='shobanraj49@gmail.com'){
+      alert('Admin cannot change password');      
+    }else{
+      this.route.navigate(['/Pages/change-pwd',{access:'true'}]);
+    }
+  
   }
 
 }

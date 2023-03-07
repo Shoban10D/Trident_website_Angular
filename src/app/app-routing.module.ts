@@ -15,10 +15,10 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'admin-home',component:AdminHomeComponent,canActivate:[AdminGuardGuard]},
-  {path:'admin-clothing',component:AdminClothingComponent},
-  {path:'admin-earphone',component:AdminHeadphonesComponent},
-  {path:'admin-car',component:AdminCarComponent},
-  {path:'Pages',loadChildren: () =>import('/home/decoders/Desktop/Angular/AngularEcommerce/src/app/pages/pages.module').then((m) => m.PagesModule),}];
+  {path:'admin-clothing',component:AdminClothingComponent,canActivate:[AdminGuardGuard]},
+  {path:'admin-earphone',component:AdminHeadphonesComponent,canActivate:[AdminGuardGuard]},
+  {path:'admin-car',component:AdminCarComponent,canActivate:[AdminGuardGuard]},
+  {path:'Pages',loadChildren: () =>import('/home/decoders/Desktop/Angular/AngularEcommerce/src/app/pages/pages.module').then((m) => m.PagesModule)}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

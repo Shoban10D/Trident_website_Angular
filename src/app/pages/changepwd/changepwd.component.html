@@ -23,20 +23,20 @@
           </mat-form-field><br>
           <mat-form-field >
             <mat-label>Email</mat-label>
-            <input [readonly]="read" matInput formControlName="Email" >
+            <input [readonly]="read" matInput formControlName="Email" #email>
           </mat-form-field><br>
 
-          <button [disabled]="EmailConfirm.invalid" class="btn btn-outline-danger" (click)="startTimer()">SEND OTP</button>
+          <button [disabled]="EmailConfirm.invalid" class="btn btn-outline-danger" (click)="resetpwd(email.value)">SEND LINK</button>
           <!-- {{EmailConfirm.value | json}} -->
     </form> 
-    <p [hidden]="!Hide" style="text-align:right;">{{ Minute }}:{{ Seconds }}</p><br>
+    <!-- <p [hidden]="!Hide" style="text-align:right;">{{ Minute }}:{{ Seconds }}</p><br> -->
 
-    <mat-form-field [class.d-none]="!Hide" appearance="outline" class="d-flex justify-content-start">
+    <!-- <mat-form-field [class.d-none]="!Hide" appearance="outline" class="d-flex justify-content-start">
       <mat-label>OTP</mat-label>
       <input matInput #OTP>
 
       <button mat-mini-fab style="background-color:green;" (click)="switch(OTP.value)"><mat-icon>done</mat-icon></button>  
-    </mat-form-field>   
+    </mat-form-field>    -->
 </mat-card>
 
  </ng-template>
@@ -44,7 +44,7 @@
 
 
 <ng-template #pwdChange>
-  <mat-card id="resetMatCard"><br>
+  <!-- <mat-card id="resetMatCard"><br>
     <small style="color:rgb(255, 255, 255);">P A S S W O R D&nbsp;&nbsp;  C H A N G E</small><br><br><br>
     <hr>
     <mat-form-field style="width: 300px;">
@@ -60,6 +60,6 @@
   </mat-form-field>  
   <app-password-validator [pwd]="pwdChecker" (PasswordResult)="MainPassword($event)"></app-password-validator> <br>
   <button class="btn btn-outline-success"  (click)="onSubmit()">SUBMIT</button> 
-  </mat-card>  
+  </mat-card>   -->
 </ng-template>
 
